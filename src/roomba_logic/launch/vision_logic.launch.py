@@ -5,14 +5,14 @@ def generate_launch_description():
     return LaunchDescription([
         # 1. Nó da Ponte (Pega a câmera do Windows)
         Node(
-            package='roomba_control', 
+            package='roomba_wsl_drivers', 
             executable='ponte', 
             name='camera_bridge'
         ),
         
         # 2. Nó do Detector de aruco
         Node(
-            package='roomba_control', 
+            package='roomba_logic', 
             executable='detector', 
             name='aruco_detector'
         ),

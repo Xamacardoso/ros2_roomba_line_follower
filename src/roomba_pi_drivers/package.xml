@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>roomba_logic</name>
+  <name>roomba_pi_drivers</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="xamacardoso@todo.todo">xamacardoso</maintainer>
+  <description>Drivers de hardware para o Roomba rodando no Raspberry Pi</description>
+  <maintainer email="contato.xcardoso@gmail.com">xamacardoso</maintainer>
   <license>TODO: License declaration</license>
 
   <depend>rclpy</depend>

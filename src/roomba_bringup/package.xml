@@ -1,14 +1,16 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>roomba_logic</name>
+  <name>roomba_bringup</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="xamacardoso@todo.todo">xamacardoso</maintainer>
+  <description>Launches (arquivos de inicializacao) gerais do sistema</description>
+  <maintainer email="contato.xcardoso@gmail.com">xamacardoso</maintainer>
   <license>TODO: License declaration</license>
 
   <depend>rclpy</depend>
-  <depend>geometry_msgs</depend>
+  <depend>roomba_logic</depend>
+  <depend>roomba_wsl_drivers</depend>
+  <depend>roomba_pi_drivers</depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>

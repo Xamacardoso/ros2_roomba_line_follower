@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 from glob import glob
 import os
 
-package_name = 'roomba_logic'
+package_name = 'roomba_bringup'
 
 setup(
     name=package_name,
@@ -18,7 +18,7 @@ setup(
     zip_safe=True,
     maintainer='xamacardoso',
     maintainer_email='contato.xcardoso@gmail.com',
-    description='Controle do Roomba para TCC',
+    description='Configuracao centralizada de inicializacao do Roomba',
     license='TODO: License declaration',
     extras_require={
         'test': [
@@ -26,10 +26,6 @@ setup(
         ],
     },
     entry_points={
-        'console_scripts': [
-		'girar = roomba_logic.turtle_circulo:main',
-        'detector = roomba_logic.detector_aruco:main',
-        # 'brain = roomba_logic.brain_node:main',
-        ],
+        'console_scripts': [],
     },
 )
