@@ -1,0 +1,29 @@
+# ROS 2 build artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.venv/
+env/
+
+# OpenCV/C++
+*.so
+*.a
+*.o
+
+# Windows/OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VS Code / IDEs
+.vscode/
+.idea/
+
+recompilar.sh
