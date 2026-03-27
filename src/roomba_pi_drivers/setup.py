@@ -28,6 +28,7 @@ setup(
     entry_points={
         'console_scripts': [
             'motor = roomba_pi_drivers.motor_driver:main',
+            'camera = roomba_pi_drivers.pi_camera_node:main',
         ],
     },
 )
