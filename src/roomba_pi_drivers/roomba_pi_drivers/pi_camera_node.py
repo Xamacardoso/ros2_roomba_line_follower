@@ -7,16 +7,19 @@ from cv_bridge import CvBridge
 class PiCameraNode(Node):
     def __init__(self):
         super().__init__('pi_camera_node')
+
+        self.declare_parameter('device_index', 0)
+        camera_idx = self.get_parameter('device_index').get_parameter_value().integer_value
+
         self.publisher_ = self.create_publisher(Image, '/image_raw', 10)
         self.bridge = CvBridge()
-        
-        # Abre a câmera do Pi (0 para USB ou CSI configurada como V4L2)
-        self.cap = cv2.VideoCapture(0)
-        
+
+        self.cap = cv2.VideoCapture(camera_idx)
+
         # Define uma resolução menor para não sobrecarregar o processamento do Pi
-        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-        self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
-        
+        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
+        self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
+
         # Timer para capturar frames (30 FPS aprox.)
         self.timer = self.create_timer(0.033, self.timer_callback)
         self.get_logger().info("Driver de Câmera do Raspberry Pi iniciado!")

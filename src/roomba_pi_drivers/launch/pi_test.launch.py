@@ -7,7 +7,8 @@ def generate_launch_description():
         Node(
             package='roomba_pi_drivers',
             executable='camera',
-            name='pi_camera'
+            name='pi_camera',
+	    parameters=[{'device_index': 0}]
         ),
         # 2. Sua Lógica de ArUco (REUTILIZADA)
         Node(
