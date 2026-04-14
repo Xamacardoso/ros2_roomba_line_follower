@@ -18,10 +18,17 @@ class PonteCamera(Node):
         
         import subprocess
         cmd = "ip route show | grep default | awk '{print $3}'"
-        windows_ip = subprocess.check_output(cmd, shell=True).decode('utf-8').strip()
+        # windows_ip = subprocess.check_output(cmd, shell=True).decode('utf-8').strip()
+        windows_ip = "127.0.0.1"
 
-        self.get_logger().info(f"Tentando conectar no Windows no IP: {windows_ip}")
-        self.client_socket.connect((windows_ip, 9999))
+        self.get_logger().info(f"Tentando conectar no Windows no IP Localhost: {windows_ip}, na porta 9999")
+
+        try:
+            self.client_socket.connect((windows_ip, 9999))
+        except Exception as e:
+            self.get_logger().error(f"Não foi possível conectar ao Windows: {e}")
+            self.get_logger().error("Verifique se o script 'stream_camera.py' está rodando no Windows!")
+            return
 
         self.payload_size = struct.calcsize("Q")
         self.data = b""
