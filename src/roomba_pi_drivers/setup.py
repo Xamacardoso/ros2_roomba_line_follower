@@ -29,6 +29,7 @@ setup(
         'console_scripts': [
             'motor = roomba_pi_drivers.motor_driver:main',
             'camera = roomba_pi_drivers.pi_camera_node:main',
+            'line_sensor = roomba_pi_drivers.line_sensor_node:main',
         ],
     },
 )

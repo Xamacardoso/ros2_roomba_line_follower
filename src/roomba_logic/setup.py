@@ -29,9 +29,10 @@ setup(
         'console_scripts': [
 		'girar = roomba_logic.turtle_circulo:main',
         'detector = roomba_logic.detector_aruco:main',
-        # 'brain = roomba_logic.brain_node:main',
         'mission_control = roomba_logic.mission_control:main',
         'draw_track = roomba_logic.draw_track:main',
+        'pid = roomba_logic.pid_controller_node:main',
+        'mission_control_pi = roomba_logic.mission_control_pi:main',
         ],
     },
 )
